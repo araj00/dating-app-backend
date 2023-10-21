@@ -1,0 +1,447 @@
+{
+	"info": {
+		"_postman_id": "7e9155af-abcc-4e5e-894e-2863de398834",
+		"name": "Dating-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24266369"
+	},
+	"item": [
+		{
+			"name": "User-profile",
+			"item": [
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Shruti Kumari\",\r\n    \"email\" : \"shruti123@gmail.com\",\r\n    \"password\": \"$123456$\",\r\n    \"dateOfBirth\": 1129802897976,\r\n    \"gender\" : \"Male\",\r\n    \"address\" : \"plot no.- 145 , P.B Rane, Bhikhna Pahari\",\r\n    \"location\" : \"Patna\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aryan123@gmail.com\",\r\n    \"password\" : \"$123456$\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "handleRefreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/users/refresh-token"
+					},
+					"response": []
+				},
+				{
+					"name": "logoutUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/users/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gender\" : \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/users/updateProfile"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProfile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profilePicture\" : \"dfldsjfs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/users/deleteProfile"
+					},
+					"response": []
+				},
+				{
+					"name": "searchProfiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/searchProfiles?gender=Other",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"searchProfiles"
+							],
+							"query": [
+								{
+									"key": "gender",
+									"value": "Other"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/users/getProfiles"
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/users/changePassword"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invitation",
+			"item": [
+				{
+					"name": "createInvitation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipientId\" : \"653260e7e889459a9fea7687\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/invitation"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllInvitations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipientId\" : \"6531b09dd3cd31d4d9c99ba9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/invitation/get"
+					},
+					"response": []
+				},
+				{
+					"name": "getInvitationById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/invitation/653326e8c036b7070722c66c"
+					},
+					"response": []
+				},
+				{
+					"name": "updateInvitation",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"response\": \"Rejected\";\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/invitation/653307bbbb8507501733ac40"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteInvitation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/invitation/653310c0c4db06ec64a0d2d2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chats",
+			"item": [
+				{
+					"name": "getAllChats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/chats"
+					},
+					"response": []
+				},
+				{
+					"name": "getChatById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/chats"
+					},
+					"response": []
+				},
+				{
+					"name": "sendMessage",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\" : \"Hi,Anmol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/chats/send/6533383d373e740f29d73f52"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cafes",
+			"item": [
+				{
+					"name": "getAllCafes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"chatId\" : \"65332da9057d928afc40b262\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/cafes"
+					},
+					"response": []
+				},
+				{
+					"name": "getCafeById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"chatId\" : \"6533383d373e740f29d73f52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/cafes/6533835368b19f564704b308"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "getAllBookings",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getBookingById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/bookings/"
+					},
+					"response": []
+				},
+				{
+					"name": "reserveBooking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cafeId\":\"6533835368b19f564704b308\",\r\n    \"chatId\" : \"65332da9057d928afc40b262\",\r\n    \"startTime\":1698949800000,\r\n    \"endTime\":1698949800000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/bookings/bookReservation"
+					},
+					"response": []
+				},
+				{
+					"name": "updateReservation",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cafeId\":\"6533835368b19f564704b308\",\r\n    \"status\": \"Canceled\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/bookings/updateReservation/65339651793720ff5a1d8cf9"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzI2MGU3ZTg4OTQ1OWE5ZmVhNzY4NyIsImlhdCI6MTY5Nzg4MDE4MCwiZXhwIjoxNjk3ODgwNDgwfQ.5gZwcjub4f8jCvY8e0VtxKS_O6rTnBCeWv8IRo4bt0Y"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
